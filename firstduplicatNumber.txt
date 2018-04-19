@@ -1,0 +1,16 @@
+        int[] a={3,4,50,50,4,3,2};
+        int[] ischeck=new int[a.length];
+        int min=100;
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                if (a[i]==a[j] && i!=j &&  (ischeck[i] != -1 || ischeck[j]!=-1)) {
+                    ischeck[i]=-1;
+                    ischeck[j]=-1;
+                    if (j<min) {
+                        min=j;
+                    }
+                }
+ 
+            }
+        }
+        System.out.println(a[min]);
